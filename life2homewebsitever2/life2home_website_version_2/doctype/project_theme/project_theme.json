@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:title",
- "creation": "2023-12-15 17:54:09.896076",
+ "creation": "2023-12-15 18:03:17.667520",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -16,14 +16,12 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "Title",
-   "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "description",
-   "fieldtype": "HTML Editor",
+   "fieldtype": "Data",
    "label": "Description"
   },
   {
@@ -35,11 +33,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-15 18:04:46.915953",
+ "modified": "2023-12-15 18:03:17.667520",
  "modified_by": "Administrator",
  "module": "Life2Home Website Version 2",
- "name": "Services",
- "name_case": "Title Case",
+ "name": "Project Theme",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
