@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:title",
- "creation": "2023-12-15 17:54:09.896076",
+ "creation": "2023-12-15 18:07:30.249408",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -27,19 +27,17 @@
    "label": "Description"
   },
   {
-   "default": "0",
    "fieldname": "isactive",
-   "fieldtype": "Check",
+   "fieldtype": "Data",
    "label": "IsActive"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-15 18:04:46.915953",
+ "modified": "2023-12-15 18:08:26.732933",
  "modified_by": "Administrator",
  "module": "Life2Home Website Version 2",
- "name": "Services",
- "name_case": "Title Case",
+ "name": "Room Type",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

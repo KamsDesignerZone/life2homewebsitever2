@@ -215,3 +215,8 @@ app_license = "MIT"
 # auth_hooks = [
 #	"life2homewebsitever2.auth.validate"
 # ]
+fixtures = [
+    "Project Theme",
+    "Room Type",
+    "Service"
+]
