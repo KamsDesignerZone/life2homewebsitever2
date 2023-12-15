@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include life2homewebsitever2 *.css
+recursive-include life2homewebsitever2 *.csv
+recursive-include life2homewebsitever2 *.html
+recursive-include life2homewebsitever2 *.ico
+recursive-include life2homewebsitever2 *.js
+recursive-include life2homewebsitever2 *.json
+recursive-include life2homewebsitever2 *.md
+recursive-include life2homewebsitever2 *.png
+recursive-include life2homewebsitever2 *.py
+recursive-include life2homewebsitever2 *.svg
+recursive-include life2homewebsitever2 *.txt
+recursive-exclude life2homewebsitever2 *.pyc
