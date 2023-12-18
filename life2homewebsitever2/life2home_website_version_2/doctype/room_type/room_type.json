@@ -10,7 +10,8 @@
  "field_order": [
   "title",
   "description",
-  "isactive"
+  "isactive",
+  "image"
  ],
  "fields": [
   {
@@ -27,14 +28,20 @@
    "label": "Description"
   },
   {
+   "default": "0",
    "fieldname": "isactive",
-   "fieldtype": "Data",
+   "fieldtype": "Check",
    "label": "IsActive"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-15 18:08:26.732933",
+ "modified": "2023-12-18 18:05:16.434672",
  "modified_by": "Administrator",
  "module": "Life2Home Website Version 2",
  "name": "Room Type",

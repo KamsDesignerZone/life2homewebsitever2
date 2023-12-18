@@ -1,48 +1,43 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:title",
- "creation": "2023-12-15 18:03:17.667520",
+ "autoname": "field:question",
+ "creation": "2023-12-18 18:07:24.230846",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title",
-  "description",
-  "isactive",
-  "image"
+  "question",
+  "answer",
+  "sequence"
  ],
  "fields": [
   {
-   "fieldname": "title",
+   "fieldname": "question",
    "fieldtype": "Data",
-   "label": "Title",
+   "in_list_view": 1,
+   "label": "Question",
+   "reqd": 1,
    "unique": 1
   },
   {
-   "fieldname": "description",
+   "fieldname": "answer",
    "fieldtype": "HTML Editor",
-   "label": "Description"
+   "label": "Answer"
   },
   {
-   "default": "0",
-   "fieldname": "isactive",
-   "fieldtype": "Check",
-   "label": "IsActive"
-  },
-  {
-   "fieldname": "image",
-   "fieldtype": "Attach Image",
-   "label": "Image"
+   "fieldname": "sequence",
+   "fieldtype": "Int",
+   "label": "Sequence"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-18 18:05:27.421290",
+ "modified": "2023-12-18 18:07:24.230846",
  "modified_by": "Administrator",
  "module": "Life2Home Website Version 2",
- "name": "Project Theme",
+ "name": "FAQ",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

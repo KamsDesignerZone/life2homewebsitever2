@@ -10,7 +10,8 @@
  "field_order": [
   "title",
   "description",
-  "isactive"
+  "isactive",
+  "image"
  ],
  "fields": [
   {
@@ -31,11 +32,16 @@
    "fieldname": "isactive",
    "fieldtype": "Check",
    "label": "IsActive"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-12-15 18:04:46.915953",
+ "modified": "2023-12-18 18:04:45.465362",
  "modified_by": "Administrator",
  "module": "Life2Home Website Version 2",
  "name": "Service",

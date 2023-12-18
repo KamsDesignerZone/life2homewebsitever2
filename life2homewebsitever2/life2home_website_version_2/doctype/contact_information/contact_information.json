@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-12-18 18:11:14.137191",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "full_address",
+  "contact_number",
+  "email_id",
+  "website"
+ ],
+ "fields": [
+  {
+   "fieldname": "full_address",
+   "fieldtype": "Data",
+   "label": "Full Address"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email Id"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-12-18 18:11:32.220511",
+ "modified_by": "Administrator",
+ "module": "Life2Home Website Version 2",
+ "name": "Contact Information",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
