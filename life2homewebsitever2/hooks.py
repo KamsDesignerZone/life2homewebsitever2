@@ -218,5 +218,10 @@ app_license = "MIT"
 fixtures = [
     "Project Theme",
     "Room Type",
-    "Service"
+    "Service",
+    "FAQ",
+    "Contact Information",
+    "Display Project Images",
+    "Display Project",
+    "Customer Review"
 ]

@@ -1,0 +1,63 @@
+{
+ "actions": [],
+ "autoname": "field:customer_name",
+ "creation": "2023-12-19 17:57:58.485267",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "review",
+  "customer_name",
+  "stars",
+  "isactive"
+ ],
+ "fields": [
+  {
+   "fieldname": "review",
+   "fieldtype": "Text",
+   "label": "Review"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "stars",
+   "fieldtype": "Data",
+   "label": "Stars"
+  },
+  {
+   "fieldname": "isactive",
+   "fieldtype": "Data",
+   "label": "IsActive"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-12-19 17:58:09.655018",
+ "modified_by": "Administrator",
+ "module": "Life2Home Website Version 2",
+ "name": "Customer Review",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
