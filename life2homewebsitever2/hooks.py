@@ -216,12 +216,8 @@ app_license = "MIT"
 #	"life2homewebsitever2.auth.validate"
 # ]
 fixtures = [
-    "Project Theme",
-    "Room Type",
     "Service",
     "FAQ",
     "Contact Information",
-    "Display Project Images",
-    "Display Project",
     "Customer Review"
 ]
