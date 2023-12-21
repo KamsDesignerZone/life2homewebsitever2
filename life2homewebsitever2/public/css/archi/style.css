@@ -6105,7 +6105,7 @@ blockquote.testimonial-big .name{
 blockquote.testimonial-big .title{
 	margin-bottom:20px;
 	font-size:26px;
-	font-weight:bold;
+	/* font-weight:bold; */
 }
 blockquote.testimonial-big:before{
 	font-family:FontAwesome;
