@@ -13,6 +13,7 @@
 /* general  for subheader */
 #subheader{
 background:url(../images/background/subheader.jpg)top fixed;
+padding: 20px;
 }
 
 /* background settings for page subheader */
