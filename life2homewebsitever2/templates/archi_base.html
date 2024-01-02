@@ -32,6 +32,25 @@
 	
 	<!-- custom style -->
 	<link rel="stylesheet" href="/assets/life2homewebsitever2/css/custom-interior-design.css" type="text/css">
+    
+    <!--Frappe Framework Stuff-->
+    <link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/website.bundle.BB37ADO3.css">
+    <link type="text/css" rel="stylesheet" href="/assets/erpnext/dist/css/erpnext-web.bundle.Z5OJSEYT.css">
+    <script>
+		window.frappe = {};
+		frappe.ready_events = [];
+		frappe.ready = function(fn) {
+			frappe.ready_events.push(fn);
+		}
+		window.dev_server = 1;
+		window.socketio_port = 9003;
+		window.show_language_picker = false;
+	</script>
+    	<script type="text/javascript" src="/assets/frappe/dist/js/frappe-web.bundle.HL3LQV7I.js"></script>
+	
+        <script type="text/javascript" src="/website_script.js"></script>
+        <script type="text/javascript" src="/assets/erpnext/dist/js/erpnext-web.bundle.22EWE5JY.js"></script>
+        
 </head>
 
 <body id="homepage" class="de_light" data-new-gr-c-s-check-loaded="14.1147.0" data-gr-ext-installed="" cz-shortcut-listen="true" style="display: block;">
@@ -299,26 +318,23 @@
     <script src="/assets/life2homewebsitever2/js/archi/jquery.themepunch.plugins.min.js"></script>
     <script src="/assets/life2homewebsitever2/js/archi/jquery.themepunch.revolution.min.js"></script>
 	
+
 	<script>
-    // async function get_time_slots(date, timezone) {
-    //     $.ajax({
-	// 	method: "GET",
-	// 	url: "/",
-	// 	data: {
-	// 		cmd: "erpnext.www.book_appointment.index.get_appointment_slots",
-	// 		date: date,
-	// 		timezone: timezone
-	// 	},
-	// 	dataType: "json",
-	// 	success: function(data) {
-	// 		console.log(data.message || []);
-    //     }
-    // })
-    // }
+    async function get_time_slots(date, timezone) {
+    let slots = (await frappe.call({
+        method: 'erpnext.www.book_appointment.index.get_appointment_slots',
+        args: {
+            date: date,
+            timezone: timezone
+        }
+    })).message;
+    console.log(slots);
+    return slots;
+}
     $(window).on("load", function(){
       $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.5});
       $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.5, orientation: 'vertical'});
-        //get_time_slots ('2024-01-09','Asia/Calcutta')
+        get_time_slots ('2024-01-09','Asia/Calcutta')
     });
     </script>
 
@@ -375,4 +391,6 @@
       div.grammarly-desktop-integration:before {
         content: attr(data-content);
       }
-    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration>
+    <script>frappe.csrf_token = "{{frappe.session.csrf_token}}";</script>
+    </html>
