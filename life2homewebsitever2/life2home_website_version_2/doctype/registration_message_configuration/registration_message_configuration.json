@@ -7,7 +7,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "message_on_appointment_page"
+  "message_on_appointment_page",
+  "message_on_appointment_page_for_me"
  ],
  "fields": [
   {
@@ -16,12 +17,18 @@
    "in_list_view": 1,
    "label": "Message On Appointment Page",
    "reqd": 1
+  },
+  {
+   "fieldname": "message_on_appointment_page_for_me",
+   "fieldtype": "HTML Editor",
+   "label": "Message On Appointment Page For Me",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-01-04 19:57:27.852820",
+ "modified": "2024-01-04 21:07:09.475712",
  "modified_by": "Administrator",
  "module": "Life2Home Website Version 2",
  "name": "Registration Message Configuration",

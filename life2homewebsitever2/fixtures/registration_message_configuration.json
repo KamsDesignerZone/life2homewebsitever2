@@ -2,8 +2,9 @@
  {
   "docstatus": 0,
   "doctype": "Registration Message Configuration",
-  "message_on_appointment_page": "Please Note New Project Registrations Are Currently Open For The Month Of <b>20th DECEMBER 2023</b>, and Onwards.\n",
-  "modified": "2024-01-04 19:50:23.220457",
+  "message_on_appointment_page": "Please Note New Project Registrations Are Currently Open For The Month Of <b>20th DECEMBER 2023</b>, and Onwards.",
+  "message_on_appointment_page_for_me": "We Meet Marketing Executives Only On Every Wednesday Between 10:00 AM To 01:00 PM, Only With Prior Confirmed Appointment",
+  "modified": "2024-01-04 21:07:27.671540",
   "name": "Registration Message Configuration"
  }
 ]
