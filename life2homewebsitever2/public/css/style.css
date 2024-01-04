@@ -2541,6 +2541,7 @@ left: 0;
 	height:auto;
 	}
 
+
 	.de_light #contact_form input[type=text],.de_light #contact_form textarea,.de_light #contact_form input[type=email], .de_light #search, 	.de_light #contact_form select
 		{
 		border-radius: 5px !important;
@@ -2548,6 +2549,7 @@ left: 0;
 		-webkit-border-radius: 5px !important;
 		border:solid 1px #dddddd;
 		background:#ffffff;	
+		border-radius:0 !important;
 		color:#333 !important;
 		}
 

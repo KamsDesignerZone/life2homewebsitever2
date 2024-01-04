@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-01-04 19:49:10.869049",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "message_on_appointment_page"
+ ],
+ "fields": [
+  {
+   "fieldname": "message_on_appointment_page",
+   "fieldtype": "HTML Editor",
+   "in_list_view": 1,
+   "label": "Message On Appointment Page",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-01-04 19:57:27.852820",
+ "modified_by": "Administrator",
+ "module": "Life2Home Website Version 2",
+ "name": "Registration Message Configuration",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "All",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -220,5 +220,6 @@ fixtures = [
     "Service",
     "FAQ",
     "Contact Information",
-    "Customer Review"
+    "Customer Review",
+    "Registration Message Configuration"
 ]

@@ -34,8 +34,8 @@
 	<link rel="stylesheet" href="/assets/life2homewebsitever2/css/custom-interior-design.css" type="text/css">
     
     <!--Frappe Framework Stuff-->
-    <link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/website.bundle.BB37ADO3.css">
-    <link type="text/css" rel="stylesheet" href="/assets/erpnext/dist/css/erpnext-web.bundle.Z5OJSEYT.css">
+    <!-- <link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/website.bundle.BB37ADO3.css">
+    <link type="text/css" rel="stylesheet" href="/assets/erpnext/dist/css/erpnext-web.bundle.Z5OJSEYT.css"> -->
     <script>
 		window.frappe = {};
 		frappe.ready_events = [];
@@ -112,6 +112,8 @@
 												<li><a href="/life2home_allprojectthemes">Project Themes</a></li>
 												<li><a href="/life2home_allroomthemes">Room Wise Design Ideas</a></li>
 											</ul>
+										</li>
+                                        <li><a href="/life2home_book_appointment">Book Appointment</a><span></span>
 										</li>
 										<li><a href="/life2home_contact">Contact</a><span></span>
 										</li>
@@ -284,4 +286,7 @@
       }
     </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration>
     <script>frappe.csrf_token = "{{frappe.session.csrf_token}}";</script>
+    {% block bottom_javascript %}
+
+    {% endblock%}
     </html>
