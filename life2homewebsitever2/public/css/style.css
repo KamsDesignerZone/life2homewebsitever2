@@ -2531,7 +2531,7 @@ left: 0;
 	width: 98%;
 	}
 	
-	#contact_form input[type=text],#contact_form textarea,#contact_form input[type=email],#contact_form input[type=number],#search, #contact_form select{
+	#contact_form input[type=text], input[type=tel],#contact_form textarea,#contact_form input[type=email],#contact_form input[type=number],#search, #contact_form select{
 	padding:10px;
 	margin-bottom:20px;
 	color:#fff;
@@ -2542,7 +2542,7 @@ left: 0;
 	}
 
 
-	.de_light #contact_form input[type=text],.de_light #contact_form textarea,.de_light #contact_form input[type=email], .de_light #search, 	.de_light #contact_form select
+	.de_light #contact_form input[type=text], input[type=tel],.de_light #contact_form textarea,.de_light #contact_form input[type=email], .de_light #search, 	.de_light #contact_form select
 		{
 		border-radius: 5px !important;
 		-moz-border-radius: 5px !important;

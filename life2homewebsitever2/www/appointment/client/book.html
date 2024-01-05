@@ -34,39 +34,39 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8 offset-md-2">
-			<form name="contactForm" id='contact_form' method="post">
+			<form name="clientAppointmentForm" id='contact_form'>
 				<div id="step-1" class="row">
 					<h4><i class="fa fa-user id-color"></i>Communication Details</h4>
 					<div class="col-md-6">
-						<div id='name_error' class='error'>Your name.</div>
+						<div id='name_error' class='error'>Your Name Is Required.</div>
 						<div>
-							<input type='text' name='Name' id='name' class="form-control" placeholder="Your Name" required>
+							<input type='text' name='name' id='name' class="form-control" placeholder="Your Name" required>
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div id='phone_error' class='error'>Your phone.</div>
+						<div id='phone_error' class='error'>Your Phone Is Required.</div>
 						<div>
-							<input type='text' name='phone' id='phone' class="form-control" placeholder="Your Phone" required>
+							<input type='tel' pattern="[0-9]{10}" name='phone' id='phone' class="form-control" placeholder="Your Phone" required>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div id='email_error' class='error'>Your valid E-mail ID.</div>
 						<div>
-							<input type='email' name='Email' id='email' class="form-control" placeholder="Your Email" required>
+							<input type='email' name='email' id='email' class="form-control" placeholder="Your Email" required>
 						</div>
 					</div>
 				</div>
 				<div id="step-2" class="row">
 					<h4><i class="fa fa-user id-color"></i>Appointment Slot</h4>
 					<div class="col-md-6 mb10">
-						<div id='appointment_date_error' class='error'>Your valid E-mail ID.</div>
-						<input type="text" id="appointment_date"  class="form-control" placeholder="Select Appointment Date">
+						<div id='appointment_date_error' class='error'>Select Appointment Date.</div>
+						<input type="text" name="appointmentdate" id="appointment_date"  class="form-control" placeholder="Select Appointment Date" required>
 					</div>
 
 					<div class="col-md-6 mb10">
-						<div id='appointmentslot_error' class='error'>Your valid E-mail ID.</div>
+						<div id='appointmentslot_error' class='error'>Select Appointment Slot.</div>
 						<div>
-								<select name="appointmentslot" id="appointmentslot" value="" class="form-control" placeholder="Select Appointment Slot">
+								<select name="appointmentslot" id="appointmentslot" value="" class="form-control" placeholder="Select Appointment Slot" required>
 								</select>
 						</div>
 					</div>
@@ -74,8 +74,8 @@
 				<div id="step-3" class="row">
 					<h4><i class="fa fa-user id-color"></i>Site Details</h4>
 					<div class="col-md-6 mb10">
-						<div id='site_type_error' class='error'>Site Type</div>
-						<select name="site_type" id="site_type" value="" class="form-control" placeholder="Select Site Type">
+						<div id='site_type_error' class='error'>Select Site Type</div>
+						<select name="site_type" id="site_type" value="" class="form-control" placeholder="Select Site Type" required>
 							<option value="Apartment Flat">Apartment Flat</option>
 							<option value="Duplex Apartment Flat">Duplex Apartment Flat</option>
 							<option value="Independent Bunglow">Independent Bunglow</option>
@@ -83,9 +83,9 @@
 						  </select>
 					</div>
 					<div class="col-md-6 mb10">
-						<div id='site_configuration_error' class='error'>Site Configuration</div>
+						<div id='site_configuration_error' class='error'>Select Site Configuration</div>
 						<div>
-								<select name="site_configuration" id="site_configuration" value="" class="form-control" placeholder="Select Site Configuration">
+								<select name="site_configuration" id="site_configuration" value="" class="form-control" placeholder="Select Site Configuration" required>
 								  <option value="1 BHK">1 BHK</option>
 								  <option value="2 BHK">2 BHK</option>
 								  <option value="3 BHK">3 BHK</option>
@@ -97,17 +97,17 @@
 					</div>
 					<div class="col-md-6 mb10">
 						<div id='site_locality_error' class='error'>Site Type</div>
-						<input type="text" id="site_locality"  class="form-control" placeholder="Site Locality">
+						<input type="text" name="site_locality" id="site_locality"  class="form-control" placeholder="Site Locality">
 					</div>
 					<div class="col-md-6 mb10">
-						<div id='site_fulladdress_error' class='error'>Site Type</div>
-						<input type="text" id="site_fulladdress"  class="form-control" placeholder="Site Full Address">
+						<div id='site_fulladdress_error' class='error'>Site Address</div>
+						<input type="text" name="site_fulladdress" id="site_fulladdress"  class="form-control" placeholder="Site Full Address">
 					</div>
 				</div>
 				<div id="step-4" class="row">
 					<h4><i class="fa fa-user id-color"></i>Project Completion Priority</h4>
 					<div class="col-md-6 mb10">
-						<div id='project_completion_priority_error' class='error'>Site Type</div>
+						<div id='project_completion_priority_error' class='error'>Project Completion Priority</div>
 						<select name="project_completion_priority" id="project_completion_priority" value="" class="form-control" placeholder="Select Project Completion Priority">
 							<option value="Very Urgent (3 Months)">Very Urgent (3 Months)</option>
 							<option value="Moderate (4 Months)">Moderate (4 Months)</option>
@@ -115,9 +115,8 @@
 						  </select>
 					</div>
 					<div class="col-md-12">
-						<div class="g-recaptcha" data-sitekey="copy-your-site-key-here"></div>
 						<p id='submit' class="mt20">
-							<input type='submit' id='send_message' value='Book An Appointment' class="btn btn-line black btn-big" style="    background-color: var(--primary-color-1);">
+							<input type='submit' id='book_appointment' value='Book An Appointment' class="btn btn-line black btn-big" style=" background-color: var(--primary-color-1);">
 						</p>
 					</div>
 				</div>

@@ -176,7 +176,7 @@ h1.id-color-2,h2.id-color-2,h3.id-color-2,h4.id-color-2,h5.id-color-2{
 .product img:hover,
 #contact_form input[type=text]:focus,#contact_form textarea:focus, #search:focus,
 #contact_form .de_light input[type=text]:focus, #contact_form .de_lighttextarea:focus, #contact_form .de_light #search:focus,
-.form-transparent input[type=text]:focus, .form-transparent textarea:focus, .form-transparent input[type=email]:focus,
+.form-transparent input[type=text]:focus, .form-transparent textarea:focus, .form-transparent input[type=email]:focus, .form-transparent input[type=tel]:focus,
 a.btn-slider.btn-color,
 .de_tab.tab_style_4 .de_nav
 {
