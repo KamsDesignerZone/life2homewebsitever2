@@ -1,0 +1,73 @@
+[
+ {
+  "advance_booking_days": 45,
+  "agent_list": [
+   {
+    "parent": "Appointment Booking Settings",
+    "parentfield": "agent_list",
+    "parenttype": "Appointment Booking Settings",
+    "user": "hemantsavkar+1@hotmail.com"
+   }
+  ],
+  "appointment_duration": 30,
+  "availability_of_slots": [
+   {
+    "day_of_week": "Monday",
+    "from_time": "11:00:00",
+    "parent": "Appointment Booking Settings",
+    "parentfield": "availability_of_slots",
+    "parenttype": "Appointment Booking Settings",
+    "to_time": "15:00:00"
+   },
+   {
+    "day_of_week": "Tuesday",
+    "from_time": "11:00:00",
+    "parent": "Appointment Booking Settings",
+    "parentfield": "availability_of_slots",
+    "parenttype": "Appointment Booking Settings",
+    "to_time": "15:00:00"
+   },
+   {
+    "day_of_week": "Wednesday",
+    "from_time": "11:00:00",
+    "parent": "Appointment Booking Settings",
+    "parentfield": "availability_of_slots",
+    "parenttype": "Appointment Booking Settings",
+    "to_time": "15:00:00"
+   },
+   {
+    "day_of_week": "Thursday",
+    "from_time": "11:00:00",
+    "parent": "Appointment Booking Settings",
+    "parentfield": "availability_of_slots",
+    "parenttype": "Appointment Booking Settings",
+    "to_time": "15:00:00"
+   },
+   {
+    "day_of_week": "Friday",
+    "from_time": "11:00:00",
+    "parent": "Appointment Booking Settings",
+    "parentfield": "availability_of_slots",
+    "parenttype": "Appointment Booking Settings",
+    "to_time": "15:00:00"
+   },
+   {
+    "day_of_week": "Saturday",
+    "from_time": "10:00:00",
+    "parent": "Appointment Booking Settings",
+    "parentfield": "availability_of_slots",
+    "parenttype": "Appointment Booking Settings",
+    "to_time": "16:00:00"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Appointment Booking Settings",
+  "email_reminders": 1,
+  "enable_scheduling": 1,
+  "holiday_list": "CRM Availability",
+  "modified": "2024-01-05 22:53:32.630709",
+  "name": "Appointment Booking Settings",
+  "number_of_agents": 1,
+  "success_redirect_url": "appointment/client/book"
+ }
+]

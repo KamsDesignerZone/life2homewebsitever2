@@ -74,17 +74,28 @@ async function populatetimeslots(selectedDate) {
             timezone: `Asia/Calcutta`
         }
     })).message;
+    
+    $('#appointment_slot').on('change', function() {
+        alert( this.value );
+        window.selected_date = getFormatedDate(selectedDate);
+        window.selected_time = new Date(this.value).getTime();
+    });
+
     $('#appointment_slot').empty();
     if (slots.length >0){
         $.each(slots, function(key, value) {
             if (value.availability)
-                $('#appointment_slot').append(`<option value="${formatAMPM(new Date(value.time))}">${formatAMPM(new Date(value.time))}</option>`);
+                $('#appointment_slot').append(`<option value="${value.time}">${formatAMPM(new Date(value.time))}</option>`);
             else 
-                $('#appointment_slot').append(`<option value="${formatAMPM(new Date(value.time))}" disabled>${formatAMPM(new Date(value.time))} - Reserved</option>`);
+                $('#appointment_slot').append(`<option value="${value.time}" disabled>${formatAMPM(new Date(value.time))} - Reserved</option>`);
         });
     } else {
         $('#appointment_slot').append(`<option value="-1" disabled selected>No Slots Available For This Date</option>`);                
     }
+
+}
+
+function onTimeSlotSelected() {
 
 }
 
@@ -125,37 +136,39 @@ async function submit() {
         return;
     }
     let appointmentData = get_form_data();
-    // let appointment =  frappe.call({
-    //     method: 'erpnext.www.book_appointment.index.create_appointment',
-    //     args: {
-    //         'date': window.selected_date,
-    //         'time': window.selected_time,
-    //         'contact': appointmentData,
-    //         'tz':window.selected_timezone
-    //     },
-    //     callback: (response)=>{
-    //         if (response.message.status == "Unverified") {
-    //             frappe.show_alert("Please check your email to confirm the appointment")
-    //         } else {
-    //             frappe.show_alert("Appointment Created Successfully");
-    //         }
-    //         setTimeout(()=>{
-    //             let redirect_url = "/";
-    //             if (window.appointment_settings.success_redirect_url){
-    //                 redirect_url += window.appointment_settings.success_redirect_url;
-    //             }
-    //             window.location.href = redirect_url;},5000)
-    //     },
-    //     error: (err)=>{
-    //         frappe.show_alert("Something went wrong please try again");
-    //         button.disabled = false;
-    //     }
-    // });
+    var selected_date = window.selected_date;
+    var selected_time = new Date(window.selected_time).getHours() + ':' + new Date(window.selected_time).getMinutes() + ':' + new Date(window.selected_time).getSeconds()
+    let appointment =  frappe.call({
+        method: 'life2homewebsitever2.www.appointment.client.book.create_appointment',
+        args: {
+            'date': selected_date,
+            'time': selected_time,
+            'contact': appointmentData,
+            'tz': `Asia/Calcutta`
+        },
+        callback: (response)=>{
+            if (response.message.status == "Unverified") {
+                frappe.show_alert("Please check your email to confirm the appointment")
+            } else {
+                frappe.show_alert("Appointment Created Successfully");
+            }
+            setTimeout(()=>{
+                let redirect_url = "/";
+                if (window.appointment_settings.success_redirect_url){
+                    redirect_url += window.appointment_settings.success_redirect_url;
+                }
+                window.location.href = redirect_url;},5000)
+        },
+        error: (err)=>{
+            frappe.show_alert("Something went wrong please try again");
+            button.disabled = false;
+        }
+    });
 }
 
 function get_form_data() {
     contact = {};
-    let inputs = ['client_name', 'phone', 'email', 'appointment_date', 'appointment_slot', 'site_type', 'site_configuration', 'site_locality', 'site_fulladdress', 'project_completion_priority'];
+    let inputs = ['name', 'phone', 'email', 'appointment_date', 'appointment_slot', 'site_type', 'site_configuration', 'site_locality', 'site_fulladdress', 'project_completion_priority'];
     inputs.forEach((id) => console.log(document.getElementById(`${id}`).value))
     inputs.forEach((id) => contact[id] = document.getElementById(`${id}`).value)
     return contact

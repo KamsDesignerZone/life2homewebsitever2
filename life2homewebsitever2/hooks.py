@@ -244,5 +244,8 @@ fixtures = [
     {
          "dt": "Custom Field", 
          "filters":[["module", "in", ['Life2Home Website Version 2']]]
+    },
+    {
+        "dt" :"Appointment Booking Settings"
     }
 ]

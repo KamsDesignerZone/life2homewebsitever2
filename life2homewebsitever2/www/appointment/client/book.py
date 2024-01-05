@@ -14,6 +14,11 @@ def get_context(context):
 
 @frappe.whitelist(allow_guest=True)
 def create_appointment(date, time, tz, contact):
+	print (date)
+	print (time)
+	print (tz)
+	print (contact)
+
 	format_string = "%Y-%m-%d %H:%M:%S"
 	scheduled_time = datetime.datetime.strptime(date + " " + time, format_string)
 	# Strip tzinfo from datetime objects since it's handled by the doctype
@@ -26,9 +31,14 @@ def create_appointment(date, time, tz, contact):
 	contact = json.loads(contact)
 	appointment.customer_name = contact.get("name", None)
 	appointment.customer_phone_number = contact.get("number", None)
-	appointment.customer_skype = contact.get("skype", None)
-	appointment.customer_details = contact.get("notes", None)
 	appointment.customer_email = contact.get("email", None)
+
+	appointment.custom_site_type = contact.get("site_type", None)
+	appointment.custom_site_configuration = contact.get("site_configuration", None)
+	appointment.custom_site_locality = contact.get("site_locality", None)
+	appointment.custom_site_full_address = contact.get("site_fulladdress", None)
+	appointment.custom_project_completion_priority = contact.get("project_completion_priority", None)
+
 	appointment.status = "Open"
 	appointment.insert(ignore_permissions=True)
 	return appointment

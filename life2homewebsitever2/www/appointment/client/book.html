@@ -38,9 +38,9 @@
 				<div id="step-1" class="row">
 					<h4>Communication Details</h4>
 					<div class="col-md-6">
-						<div id='client_name_error' class='error'>Your Name Is Required.</div>
+						<div id='name_error' class='error'>Your Name Is Required.</div>
 						<div>
-							<input type='text' name='client_name' id='client_name' class="form-control" placeholder="Your Name" required>
+							<input type='text' name='name' id='name' class="form-control" placeholder="Your Name" required>
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -66,8 +66,8 @@
 					<div class="col-md-6 mb10">
 						<div id='appointment_slot_error' class='error'>Select Appointment Slot.</div>
 						<div>
-								<select name="appointment_slot" id="appointment_slot" value="" class="form-control" placeholder="Select Appointment Slot" required>
-								</select>
+							<select name="appointment_slot" id="appointment_slot" value="" class="form-control" placeholder="Select Appointment Slot" required>
+							</select>
 						</div>
 					</div>
 				</div>
@@ -116,20 +116,10 @@
 			<div id="step-4" class="row">
 				<div class="col-md-6 col-sm-12">
 					<p id='submit_btn' class="mt20">
-						<!-- <input type='button' id='book_appointment'  onclick="submit()" value='Book An Appointment' class="btn btn-line black btn-big" style=" background-color: var(--primary-color-1);"> -->
 						<button class="btn btn-line black btn-big form-control" style="padding: 20px;" onclick="submit()" id="book_appointment">Book An Appointment</button>
 					</p>
 				</div>
 			</div>
-			
-
-			<div id="success_message" class='success'>
-				Your message has been sent successfully. Refresh this page if you want to send more messages.
-			</div>
-			<div id="error_message" class='error'>
-				Sorry there was an error sending your form.
-			</div>
-
 		</div>
 	</div>
 </div>
