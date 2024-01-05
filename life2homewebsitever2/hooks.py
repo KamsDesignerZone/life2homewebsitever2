@@ -217,12 +217,32 @@ app_include_js = "/templates/pages/page.js"
 #	"life2homewebsitever2.auth.validate"
 # ]
 fixtures = [
-    "Service",
-    "FAQ",
-    "Contact Information",
-    "Customer Review",
-    "Registration Message Configuration",
-    "Site Type",
-    "Site Configuration",
-    "Project Completion Priority"
+    {
+        "dt" :"Service"
+    },
+    {
+        "dt" :"FAQ"
+    },
+    {
+        "dt" :"Contact Information"
+    },
+    {
+        "dt" :"Customer Review"
+    },
+    {
+        "dt" :"Registration Message Configuration"
+    },
+    {
+        "dt" :"Site Type"
+    },
+    {
+        "dt" :"Site Configuration"
+    },
+    {
+        "dt" :"Project Completion Priority"
+    },
+    {
+         "dt": "Custom Field", 
+         "filters":[["module", "in", ['Life2Home Website Version 2']]]
+    }
 ]
