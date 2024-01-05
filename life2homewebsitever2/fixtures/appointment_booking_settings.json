@@ -65,9 +65,9 @@
   "email_reminders": 1,
   "enable_scheduling": 1,
   "holiday_list": "CRM Availability",
-  "modified": "2024-01-05 22:53:32.630709",
+  "modified": "2024-01-06 00:07:42.971784",
   "name": "Appointment Booking Settings",
   "number_of_agents": 1,
-  "success_redirect_url": "appointment/client/book"
+  "success_redirect_url": "appointment/client/book_confirmation"
  }
 ]
