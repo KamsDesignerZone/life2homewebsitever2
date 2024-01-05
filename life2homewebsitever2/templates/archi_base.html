@@ -34,8 +34,7 @@
 	<link rel="stylesheet" href="/assets/life2homewebsitever2/css/custom-interior-design.css" type="text/css">
     
     <!--Frappe Framework Stuff-->
-    <!-- <link type="text/css" rel="stylesheet" href="/assets/frappe/dist/css/website.bundle.BB37ADO3.css">
-    <link type="text/css" rel="stylesheet" href="/assets/erpnext/dist/css/erpnext-web.bundle.Z5OJSEYT.css"> -->
+    
     <script>
 		window.frappe = {};
 		frappe.ready_events = [];
@@ -47,10 +46,13 @@
 		window.show_language_picker = false;
 	</script>
     	<script type="text/javascript" src="/assets/frappe/dist/js/frappe-web.bundle.HL3LQV7I.js"></script>
-	
         <!-- <script type="text/javascript" src="/website_script.js"></script>
         <script type="text/javascript" src="/assets/erpnext/dist/js/erpnext-web.bundle.22EWE5JY.js"></script> -->
     {% block script %}
+
+    {% endblock%}
+
+    {% block frappe_stylesheet %}
 
     {% endblock%}
 </head>

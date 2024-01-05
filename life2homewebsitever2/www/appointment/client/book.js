@@ -1,17 +1,8 @@
 async function initialise_ui() {
+    window.selected_date = undefined;
+    window.selected_time = undefined;
     await get_global_variables();
     setup_date_picker();
-}
-
-async function get_site_type() {
-    // Using await through this file instead of then.
-    window.appointment_settings = (await frappe.call({
-        method: 'erpnext.www.book_appointment.index.get_appointment_settings'
-    })).message;
-    window.timezones = (await frappe.call({
-        method:'erpnext.www.book_appointment.index.get_timezones'
-    })).message;
-    window.default_timezone ="Asia/Calcutta"
 }
 
 async function get_global_variables() {
@@ -76,16 +67,22 @@ async function populatetimeslots(selectedDate) {
     })).message;
     
     $('#appointment_slot').on('change', function() {
-        alert( this.value );
         window.selected_date = getFormatedDate(selectedDate);
         window.selected_time = new Date(this.value).getTime();
     });
 
     $('#appointment_slot').empty();
     if (slots.length >0){
+        window.selected_date = undefined;
+        window.selected_time = undefined;
         $.each(slots, function(key, value) {
-            if (value.availability)
+            if (value.availability) {
                 $('#appointment_slot').append(`<option value="${value.time}">${formatAMPM(new Date(value.time))}</option>`);
+                if (window.selected_date === undefined)
+                    window.selected_date = getFormatedDate(new Date(value.time));
+                if (window.selected_time === undefined)
+                    window.selected_time = new Date(value.time).getTime();
+            }
             else 
                 $('#appointment_slot').append(`<option value="${value.time}" disabled>${formatAMPM(new Date(value.time))} - Reserved</option>`);
         });
@@ -128,7 +125,7 @@ function setup_search_params() {
 
 async function submit() {
     let button = document.getElementById('book_appointment');
-    //button.disabled = true;
+    button.disabled = true;
     let form = document.querySelector('#contact_form');
     if (!form.checkValidity()) {
         form.reportValidity();
@@ -137,6 +134,7 @@ async function submit() {
     }
     let appointmentData = get_form_data();
     var selected_date = window.selected_date;
+    console.log(new Date(window.selected_time))
     var selected_time = new Date(window.selected_time).getHours() + ':' + new Date(window.selected_time).getMinutes() + ':' + new Date(window.selected_time).getSeconds()
     let appointment =  frappe.call({
         method: 'life2homewebsitever2.www.appointment.client.book.create_appointment',
@@ -147,17 +145,17 @@ async function submit() {
             'tz': `Asia/Calcutta`
         },
         callback: (response)=>{
-            if (response.message.status == "Unverified") {
-                frappe.show_alert("Please check your email to confirm the appointment")
-            } else {
-                frappe.show_alert("Appointment Created Successfully");
-            }
+            // if (response.message.status == "Unverified") {
+            //     frappe.show_alert("Please check your email to confirm the appointment")
+            // } else {
+            //     frappe.show_alert("Appointment Created Successfully");
+            // }
             setTimeout(()=>{
                 let redirect_url = "/";
                 if (window.appointment_settings.success_redirect_url){
                     redirect_url += window.appointment_settings.success_redirect_url;
                 }
-                window.location.href = redirect_url;},5000)
+                window.location.href = redirect_url;},100)
         },
         error: (err)=>{
             frappe.show_alert("Something went wrong please try again");

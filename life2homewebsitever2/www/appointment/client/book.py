@@ -14,11 +14,6 @@ def get_context(context):
 
 @frappe.whitelist(allow_guest=True)
 def create_appointment(date, time, tz, contact):
-	print (date)
-	print (time)
-	print (tz)
-	print (contact)
-
 	format_string = "%Y-%m-%d %H:%M:%S"
 	scheduled_time = datetime.datetime.strptime(date + " " + time, format_string)
 	# Strip tzinfo from datetime objects since it's handled by the doctype
