@@ -36,11 +36,11 @@
 		<div class="col-md-8 offset-md-2">
 			<form name="clientAppointmentForm" id='contact_form'>
 				<div id="step-1" class="row">
-					<h4><i class="fa fa-user id-color"></i>Communication Details</h4>
+					<h4>Communication Details</h4>
 					<div class="col-md-6">
-						<div id='name_error' class='error'>Your Name Is Required.</div>
+						<div id='client_name_error' class='error'>Your Name Is Required.</div>
 						<div>
-							<input type='text' name='name' id='name' class="form-control" placeholder="Your Name" required>
+							<input type='text' name='client_name' id='client_name' class="form-control" placeholder="Your Name" required>
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -57,42 +57,38 @@
 					</div>
 				</div>
 				<div id="step-2" class="row">
-					<h4><i class="fa fa-user id-color"></i>Appointment Slot</h4>
+					<h4>Appointment Slot</h4>
 					<div class="col-md-6 mb10">
 						<div id='appointment_date_error' class='error'>Select Appointment Date.</div>
-						<input type="text" name="appointmentdate" id="appointment_date"  class="form-control" placeholder="Select Appointment Date" required>
+						<input type="text" name="appointment_date" id="appointment_date"  class="form-control" placeholder="Select Appointment Date" required>
 					</div>
 
 					<div class="col-md-6 mb10">
-						<div id='appointmentslot_error' class='error'>Select Appointment Slot.</div>
+						<div id='appointment_slot_error' class='error'>Select Appointment Slot.</div>
 						<div>
-								<select name="appointmentslot" id="appointmentslot" value="" class="form-control" placeholder="Select Appointment Slot" required>
+								<select name="appointment_slot" id="appointment_slot" value="" class="form-control" placeholder="Select Appointment Slot" required>
 								</select>
 						</div>
 					</div>
 				</div>
 				<div id="step-3" class="row">
-					<h4><i class="fa fa-user id-color"></i>Site Details</h4>
+					<h4>Site Details</h4>
 					<div class="col-md-6 mb10">
 						<div id='site_type_error' class='error'>Select Site Type</div>
-						<select name="site_type" id="site_type" value="" class="form-control" placeholder="Select Site Type" required>
-							<option value="Apartment Flat">Apartment Flat</option>
-							<option value="Duplex Apartment Flat">Duplex Apartment Flat</option>
-							<option value="Independent Bunglow">Independent Bunglow</option>
-							<option value="Row House">Row House</option>
+						  <select name="site_type" id="site_type" value="" class="form-control" placeholder="Select Site Type" required>
+							{% for sitetype in site_types %}
+								<option value="{{sitetype.site_type_name}}">{{sitetype.site_type_name}}</option>
+							{% endfor %}
 						  </select>
 					</div>
 					<div class="col-md-6 mb10">
 						<div id='site_configuration_error' class='error'>Select Site Configuration</div>
 						<div>
-								<select name="site_configuration" id="site_configuration" value="" class="form-control" placeholder="Select Site Configuration" required>
-								  <option value="1 BHK">1 BHK</option>
-								  <option value="2 BHK">2 BHK</option>
-								  <option value="3 BHK">3 BHK</option>
-								  <option value="4 BHK">4 BHK</option>
-								  <option value="5 BHK">5 BHK</option>
-								  <option value="5 BHK +">5 BHK +</option>
-								</select>
+							<select name="site_configuration" id="site_configuration" value="" class="form-control" placeholder="Select Site Configuration" required>
+									{% for sitecobfiguration in site_cobfigurations %}
+										<option value="{{sitecobfiguration.site_configuration_name}}">{{sitecobfiguration.site_configuration_name}}</option>
+									{% endfor %}
+							</select>
 						</div>
 					</div>
 					<div class="col-md-6 mb10">
@@ -105,23 +101,26 @@
 					</div>
 				</div>
 				<div id="step-4" class="row">
-					<h4><i class="fa fa-user id-color"></i>Project Completion Priority</h4>
+					<h4>Project Completion Priority</h4>
 					<div class="col-md-6 mb10">
 						<div id='project_completion_priority_error' class='error'>Project Completion Priority</div>
 						<select name="project_completion_priority" id="project_completion_priority" value="" class="form-control" placeholder="Select Project Completion Priority">
-							<option value="Very Urgent (3 Months)">Very Urgent (3 Months)</option>
-							<option value="Moderate (4 Months)">Moderate (4 Months)</option>
-							<option value="Flexible (6 Months)">Flexible (6 Months)</option>
+								   {% for project_completion_priority in project_completion_priorities %}
+										<option value="{{project_completion_priority.project_completion_priority_name}}">{{project_completion_priority.project_completion_priority_name}}</option>
+									{% endfor %}
 						  </select>
-					</div>
-					<div class="col-md-12">
-						<p id='submit' class="mt20">
-							<input type='submit' id='book_appointment' value='Book An Appointment' class="btn btn-line black btn-big" style=" background-color: var(--primary-color-1);">
-						</p>
 					</div>
 				</div>
 			</form>
 
+			<div id="step-4" class="row">
+				<div class="col-md-6 col-sm-12">
+					<p id='submit_btn' class="mt20">
+						<!-- <input type='button' id='book_appointment'  onclick="submit()" value='Book An Appointment' class="btn btn-line black btn-big" style=" background-color: var(--primary-color-1);"> -->
+						<button class="btn btn-line black btn-big form-control" style="padding: 20px;" onclick="submit()" id="book_appointment">Book An Appointment</button>
+					</p>
+				</div>
+			</div>
 			
 
 			<div id="success_message" class='success'>

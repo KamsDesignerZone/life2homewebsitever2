@@ -1,21 +1,17 @@
-frappe.ready(async () => {
-    initialise_select_date();
-})
-
-async function initialise_select_date() {
-    navigate_to_page(1);
+async function initialise_ui() {
     await get_global_variables();
     setup_date_picker();
-    setup_timezone_selector();
-    hide_next_button();
 }
 
-async function initialise_ui() {
-    //navigate_to_page(1);
-    await get_global_variables();
-    setup_date_picker();
-    // setup_timezone_selector();
-    // hide_next_button();
+async function get_site_type() {
+    // Using await through this file instead of then.
+    window.appointment_settings = (await frappe.call({
+        method: 'erpnext.www.book_appointment.index.get_appointment_settings'
+    })).message;
+    window.timezones = (await frappe.call({
+        method:'erpnext.www.book_appointment.index.get_timezones'
+    })).message;
+    window.default_timezone ="Asia/Calcutta"
 }
 
 async function get_global_variables() {
@@ -27,20 +23,6 @@ async function get_global_variables() {
         method:'erpnext.www.book_appointment.index.get_timezones'
     })).message;
     window.default_timezone ="Asia/Calcutta"
-}
-
-function setup_timezone_selector() {
-    let timezones_element = document.getElementById('appointment-timezone');
-    let local_timezone = moment.tz.guess()
-    window.timezones.forEach(timezone => {
-        let opt = document.createElement('option');
-        opt.value = timezone;
-        if (timezone == local_timezone) {
-            opt.selected = true;
-        }
-        opt.innerHTML = timezone;
-        timezones_element.appendChild(opt)
-    });
 }
 
 function getFormatedDate(date) {
@@ -92,16 +74,16 @@ async function populatetimeslots(selectedDate) {
             timezone: `Asia/Calcutta`
         }
     })).message;
-    $('#appointmentslot').empty();
+    $('#appointment_slot').empty();
     if (slots.length >0){
         $.each(slots, function(key, value) {
             if (value.availability)
-                $('#appointmentslot').append(`<option value="${formatAMPM(new Date(value.time))}">${formatAMPM(new Date(value.time))}</option>`);
+                $('#appointment_slot').append(`<option value="${formatAMPM(new Date(value.time))}">${formatAMPM(new Date(value.time))}</option>`);
             else 
-                $('#appointmentslot').append(`<option value="${formatAMPM(new Date(value.time))}" disabled>${formatAMPM(new Date(value.time))} - Reserved</option>`);
+                $('#appointment_slot').append(`<option value="${formatAMPM(new Date(value.time))}" disabled>${formatAMPM(new Date(value.time))} - Reserved</option>`);
         });
     } else {
-        $('#appointmentslot').append(`<option value="-1" disabled selected>No Slots Available For This Date</option>`);                
+        $('#appointment_slot').append(`<option value="-1" disabled selected>No Slots Available For This Date</option>`);                
     }
 
 }
@@ -135,9 +117,7 @@ function setup_search_params() {
 
 async function submit() {
     let button = document.getElementById('book_appointment');
-    button.disabled = true;
-
-    console.log(button);
+    //button.disabled = true;
     let form = document.querySelector('#contact_form');
     if (!form.checkValidity()) {
         form.reportValidity();
@@ -145,7 +125,6 @@ async function submit() {
         return;
     }
     let appointmentData = get_form_data();
-    print (appointmentData)
     // let appointment =  frappe.call({
     //     method: 'erpnext.www.book_appointment.index.create_appointment',
     //     args: {
@@ -176,7 +155,8 @@ async function submit() {
 
 function get_form_data() {
     contact = {};
-    let inputs = ['name', 'skype', 'number', 'notes', 'email'];
-    inputs.forEach((id) => contact[id] = document.getElementById(`customer_${id}`).value)
+    let inputs = ['client_name', 'phone', 'email', 'appointment_date', 'appointment_slot', 'site_type', 'site_configuration', 'site_locality', 'site_fulladdress', 'project_completion_priority'];
+    inputs.forEach((id) => console.log(document.getElementById(`${id}`).value))
+    inputs.forEach((id) => contact[id] = document.getElementById(`${id}`).value)
     return contact
 }

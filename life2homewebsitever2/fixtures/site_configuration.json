@@ -1,0 +1,56 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Site Configuration",
+  "isactive": 1,
+  "modified": "2024-01-05 20:49:51.908710",
+  "name": "1 BHK",
+  "sequence": 1,
+  "site_configuration_name": "1 BHK"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Site Configuration",
+  "isactive": 1,
+  "modified": "2024-01-05 20:49:58.656971",
+  "name": "2 BHK",
+  "sequence": 2,
+  "site_configuration_name": "2 BHK"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Site Configuration",
+  "isactive": 1,
+  "modified": "2024-01-05 20:50:06.656719",
+  "name": "3 BHK",
+  "sequence": 3,
+  "site_configuration_name": "3 BHK"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Site Configuration",
+  "isactive": 1,
+  "modified": "2024-01-05 20:50:14.444078",
+  "name": "4 BHK",
+  "sequence": 4,
+  "site_configuration_name": "4 BHK"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Site Configuration",
+  "isactive": 1,
+  "modified": "2024-01-05 20:50:22.208037",
+  "name": "5 BHK",
+  "sequence": 5,
+  "site_configuration_name": "5 BHK"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Site Configuration",
+  "isactive": 1,
+  "modified": "2024-01-05 20:50:33.829077",
+  "name": "5 BHK+",
+  "sequence": 5,
+  "site_configuration_name": "5 BHK+"
+ }
+]

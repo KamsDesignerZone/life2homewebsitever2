@@ -1,0 +1,29 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Project Completion Priority",
+  "isactive": 1,
+  "modified": "2024-01-05 21:02:46.361396",
+  "name": "Very Urgent (3 Months)",
+  "project_completion_priority_name": "Very Urgent (3 Months)",
+  "sequence": "1"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Project Completion Priority",
+  "isactive": 1,
+  "modified": "2024-01-05 21:03:03.558005",
+  "name": "Moderate (4 Months)",
+  "project_completion_priority_name": "Moderate (4 Months)",
+  "sequence": "2"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Project Completion Priority",
+  "isactive": 1,
+  "modified": "2024-01-05 21:03:14.851604",
+  "name": "Flexible (6 Months)",
+  "project_completion_priority_name": "Flexible (6 Months)",
+  "sequence": "3"
+ }
+]

@@ -1,0 +1,38 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Site Type",
+  "isactive": 1,
+  "modified": "2024-01-05 20:43:06.570430",
+  "name": "Apartment Flat",
+  "sequence": 1,
+  "site_type_name": "Apartment Flat"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Site Type",
+  "isactive": 1,
+  "modified": "2024-01-05 20:43:16.884388",
+  "name": "Duplex Apartment Flat",
+  "sequence": 2,
+  "site_type_name": "Duplex Apartment Flat"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Site Type",
+  "isactive": 1,
+  "modified": "2024-01-05 20:45:00.234341",
+  "name": "Independent Bunglow",
+  "sequence": 4,
+  "site_type_name": "Independent Bunglow"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Site Type",
+  "isactive": 1,
+  "modified": "2024-01-05 20:43:22.850787",
+  "name": "Row House",
+  "sequence": 3,
+  "site_type_name": "Row House"
+ }
+]

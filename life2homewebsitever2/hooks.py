@@ -221,5 +221,8 @@ fixtures = [
     "FAQ",
     "Contact Information",
     "Customer Review",
-    "Registration Message Configuration"
+    "Registration Message Configuration",
+    "Site Type",
+    "Site Configuration",
+    "Project Completion Priority"
 ]
