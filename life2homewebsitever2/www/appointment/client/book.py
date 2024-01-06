@@ -25,7 +25,7 @@ def create_appointment(date, time, tz, contact):
 	appointment.scheduled_time = scheduled_time
 	contact = json.loads(contact)
 	appointment.customer_name = contact.get("name", None)
-	appointment.customer_phone_number = contact.get("number", None)
+	appointment.customer_phone_number = contact.get("customer_phone_number", None)
 	appointment.customer_email = contact.get("email", None)
 
 	appointment.custom_site_type = contact.get("site_type", None)

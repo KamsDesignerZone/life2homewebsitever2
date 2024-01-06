@@ -224,7 +224,7 @@ async function submit() {
 
 function get_form_data() {
     contact = {};
-    let inputs = ['name', 'phone', 'email', 'appointment_date', 'appointment_slot'];
+    let inputs = ['name', 'customer_phone_number', 'email', 'appointment_date', 'appointment_slot'];
     inputs.forEach((id) => console.log(document.getElementById(`${id}`).value))
     inputs.forEach((id) => contact[id] = document.getElementById(`${id}`).value)
     return contact
