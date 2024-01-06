@@ -151,10 +151,7 @@ async function submit() {
             //     frappe.show_alert("Appointment Created Successfully");
             // }
             setTimeout(()=>{
-                let redirect_url = "/";
-                if (window.appointment_settings.success_redirect_url){
-                    redirect_url += window.appointment_settings.success_redirect_url;
-                }
+                let redirect_url = "/appointment/client/book_confirmation";
                 window.location.href = redirect_url;},100)
         },
         error: (err)=>{

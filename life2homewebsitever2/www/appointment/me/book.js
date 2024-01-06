@@ -113,6 +113,22 @@ async function startFileUpload() {
     console.log(documentData)
     var file = $('input#catalogue.findDocumentOnboarding')[0].files[0];
     const base64FileData = await convertBase64(file);
+
+    var qs = (function(a) {
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i)
+        {
+            var p=a[i].split('=', 2);
+            if (p.length == 1)
+                b[p[0]] = "";
+            else
+                b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+    })(window.location.search.substr(1).split('&'));
+
+    console.log(qs);
     
     let appointmentfile =  frappe.call({
         type: "POST",
@@ -120,7 +136,7 @@ async function startFileUpload() {
         args: {
             cmd: 'life2homewebsitever2.www.appointment.me.book.uploadfile',
             doctype : 'Appointment',
-            docname : 'APMT-Hemant Savkar-0027',
+            docname : qs["doc_name"],
             filename : file.name,
             is_private: 0,
             filedata: base64FileData,
@@ -129,6 +145,9 @@ async function startFileUpload() {
         },
         callback: (response)=>{
             console.log(response);
+            setTimeout(()=>{
+                let redirect_url = "/appointment/me/book_confirmation?doc_name="+qs["doc_name"];
+                window.location.href = redirect_url;},100)
         },
         error: (err)=>{
             frappe.show_alert("Something went wrong please try again");
@@ -192,12 +211,9 @@ async function submit() {
             // } else {
             //     frappe.show_alert("Appointment Created Successfully");
             // }
-            // setTimeout(()=>{
-            //     let redirect_url = "/";
-            //     if (window.appointment_settings.success_redirect_url){
-            //         redirect_url += window.appointment_settings.success_redirect_url + "?doc=" response.name;
-            //     }
-            //     window.location.href = redirect_url;},100)
+            setTimeout(()=>{
+                let redirect_url = "/appointment/me/book_confirmation?doc_name="+response.message.name;
+                window.location.href = redirect_url;},100)
         },
         error: (err)=>{
             frappe.show_alert("Something went wrong please try again");
