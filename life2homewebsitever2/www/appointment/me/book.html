@@ -1,0 +1,97 @@
+{% extends 'templates/archi_base.html' %}
+
+{% block script %}
+	<script src="book.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<!-- subheader -->
+<section id="subheader" data-speed="8" data-type="background">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Book Appointment (ME)</h1>
+				<ul class="crumb">
+					<li><a href="/">Home</a></li>
+					<li class="sep">/</li>
+					<li>Book Appointment (ME)</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- subheader close -->
+
+<div class="container" style="padding-top: 50px !important;" >
+	<div class="row">
+		<div class="col-md-8 offset-md-2" style="    padding: 10px;
+		background-color: lightblue;
+		margin-bottom: 20px">
+			<p style="margin: 0px;
+			text-align: center;">{{message_on_appointment_page_for_me}}</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<form name="clientAppointmentForm" id='contact_form'>
+				<div id="step-1" class="row">
+					<h4>Communication Details</h4>
+					<div class="col-md-6">
+						<div id='name_error' class='error'>Your Name Is Required.</div>
+						<div>
+							<input type='text' name='name' id='name' class="form-control" placeholder="Your Name" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div id='phone_error' class='error'>Your Phone Is Required.</div>
+						<div>
+							<input type='tel' pattern="[0-9]{10}" name='phone' id='phone' class="form-control" placeholder="Your Phone" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div id='email_error' class='error'>Your valid E-mail ID.</div>
+						<div>
+							<input type='email' name='email' id='email' class="form-control" placeholder="Your Email" required>
+						</div>
+					</div>
+				</div>
+				<div id="step-2" class="row">
+					<h4>Appointment Slot</h4>
+					<div class="col-md-6 mb10">
+						<div id='appointment_date_error' class='error'>Select Appointment Date.</div>
+						<input type="text" name="appointment_date" id="appointment_date"  class="form-control" placeholder="Select Appointment Date" required>
+					</div>
+
+					<div class="col-md-6 mb10">
+						<div id='appointment_slot_error' class='error'>Select Appointment Slot.</div>
+						<div>
+							<select name="appointment_slot" id="appointment_slot" value="" class="form-control" placeholder="Select Appointment Slot" required>
+							</select>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div id="step-4" class="row">
+				<div class="col-md-6 col-sm-12">
+					<p id='submit_btn' class="mt20">
+						<button class="btn btn-line black btn-big form-control" style="padding: 20px;background-color: var(--primary-color-1)" onclick="submit()" id="book_appointment">Book An Appointment</button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+{% block bottom_javascript %}
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+
+
+    <script type="text/javascript">
+		initialise_ui();
+	</script>
+{% endblock %}

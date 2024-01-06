@@ -1,5 +1,8 @@
 {% extends 'templates/archi_base.html' %}
 
+{% block script %}
+	<script src="book.js"></script>
+{% endblock %}
 {% block content %}
 <!-- subheader -->
 <section id="subheader" data-speed="8" data-type="background">
@@ -17,19 +20,31 @@
 	</div>
 </section>
 <!-- subheader close -->
-
+<!-- https://discuss.frappe.io/t/upload-attachment-using-rest-api/4770 -->
 <div class="container" style="padding-top: 50px !important;" >
 	<div class="row">
 		<div class="col-md-12">
 			<br/><br/><br/>
 			<h2>Thank You !!</h2>
-			<h3>
+			<h3 style="font-weight: normal;">
 				Your Meeting Request Is Created.We Will Confirm The Same In Next 24 Business Working Hours. You Will Be Notified By SMS & Email upon Appointment Confirmation.
 			</h3>
-			<br/><br/><br/>
+		</div>
+		<div class="col-md-12">
+			<br/>
+			<h2>Catalogue Upload</h2>
+			<h3 style="font-weight: normal;">
+				Request You To Upload The Catalogue In Case You Want Us To Send Us Before Our Meeting
+			</h3>
+					<input type="button" id="btnCatalogueUpload" value="Upload document" class="btn btn-xs btn-primary uploadDocumentOnboarding" onclick="startFileUpload()">
+					<input id="catalogue" type="file" class="findDocumentOnboarding">
+		   
+				<br/><br/>
+			<br/>
 		</div>
 	</div>
 </div>
 
 
 {% endblock %}
+

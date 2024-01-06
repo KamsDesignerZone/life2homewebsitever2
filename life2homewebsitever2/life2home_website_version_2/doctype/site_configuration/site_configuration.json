@@ -38,7 +38,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-05 20:48:32.639177",
+ "modified": "2024-01-06 15:28:50.538948",
  "modified_by": "Administrator",
  "module": "Life2Home Website Version 2",
  "name": "Site Configuration",
@@ -56,6 +56,15 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1
   }
  ],
  "quick_entry": 1,

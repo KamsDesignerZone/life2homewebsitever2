@@ -33,6 +33,7 @@ def create_appointment(date, time, tz, contact):
 	appointment.custom_site_locality = contact.get("site_locality", None)
 	appointment.custom_site_full_address = contact.get("site_fulladdress", None)
 	appointment.custom_project_completion_priority = contact.get("project_completion_priority", None)
+	appointment.custom_booked_by = "Client"
 
 	appointment.status = "Open"
 	appointment.insert(ignore_permissions=True)
