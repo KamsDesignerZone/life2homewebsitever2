@@ -21,7 +21,7 @@ def create_appointment(date, time, tz, contact):
 	appointmentlead.mobile_no = contact.get("customer_phone_number", None)
 	appointmentlead.source = 'Web Site Appointment Form'
 	appointmentlead.email_id = contact.get("email", None)
-	appointmentlead.type = 'Channel Partner'
+	appointmentlead.type = 'Client'
 	appointmentlead.insert(ignore_permissions=True)
 
 	# Step-2 Create an Appointment
