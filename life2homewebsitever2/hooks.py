@@ -111,9 +111,9 @@ app_include_js = "/templates/pages/page.js"
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-#	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+	"Appointment": "life2homewebsitever2.www.appointment.appointment.Life2HomeAppointment"
+}
 
 # Document Events
 # ---------------
