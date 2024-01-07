@@ -145,11 +145,11 @@ async function submit() {
             'tz': `Asia/Calcutta`
         },
         callback: (response)=>{
-            // if (response.message.status == "Unverified") {
-            //     frappe.show_alert("Please check your email to confirm the appointment")
-            // } else {
-            //     frappe.show_alert("Appointment Created Successfully");
-            // }
+            if (response.message.status == "Unverified") {
+                frappe.show_alert("Please check your email to confirm the appointment")
+            } else {
+                frappe.show_alert("Appointment Created Successfully");
+            }
             setTimeout(()=>{
                 let redirect_url = "/appointment/client/book_confirmation";
                 window.location.href = redirect_url;},100)

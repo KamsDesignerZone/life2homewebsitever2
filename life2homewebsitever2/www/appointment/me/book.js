@@ -206,11 +206,11 @@ async function submit() {
         },
         callback: (response)=>{
             console.log(response);
-            // if (response.message.status == "Unverified") {
-            //     frappe.show_alert("Please check your email to confirm the appointment")
-            // } else {
-            //     frappe.show_alert("Appointment Created Successfully");
-            // }
+            if (response.message.status == "Unverified") {
+                frappe.show_alert("Please check your email to confirm the appointment")
+            } else {
+                frappe.show_alert("Appointment Created Successfully");
+            }
             setTimeout(()=>{
                 let redirect_url = "/appointment/me/book_confirmation?doc_name="+response.message.name;
                 window.location.href = redirect_url;},100)
