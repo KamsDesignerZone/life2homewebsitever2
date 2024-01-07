@@ -7,9 +7,9 @@ from frappe import _
 
 def get_context(context):
     context.new_booking_message = frappe.db.get_single_value("Registration Message Configuration", "message_on_appointment_page")
-    context.site_types = frappe.db.get_list('Site Type', fields=['site_type_name'], order_by="sequence asc")
-    context.site_cobfigurations = frappe.db.get_list('Site Configuration', fields=['site_configuration_name'], order_by="sequence asc")
-    context.project_completion_priorities = frappe.db.get_list('Project Completion Priority', fields=['project_completion_priority_name'], order_by="sequence asc")
+    context.site_types = frappe.db.get_list('Site Type', fields=['site_type_name'], order_by="sequence asc", ignore_permissions=True)
+    context.site_cobfigurations = frappe.db.get_list('Site Configuration', fields=['site_configuration_name'], order_by="sequence asc", ignore_permissions=True)
+    context.project_completion_priorities = frappe.db.get_list('Project Completion Priority', fields=['project_completion_priority_name'], order_by="sequence asc", ignore_permissions=True)
     return context
 
 @frappe.whitelist(allow_guest=True)
