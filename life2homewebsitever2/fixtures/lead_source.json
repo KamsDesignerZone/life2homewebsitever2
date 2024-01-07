@@ -1,0 +1,90 @@
+[
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.326706",
+  "name": "Existing Customer",
+  "source_name": "Existing Customer"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.337892",
+  "name": "Reference",
+  "source_name": "Reference"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.340823",
+  "name": "Advertisement",
+  "source_name": "Advertisement"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.343756",
+  "name": "Cold Calling",
+  "source_name": "Cold Calling"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.346882",
+  "name": "Exhibition",
+  "source_name": "Exhibition"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.349827",
+  "name": "Supplier Reference",
+  "source_name": "Supplier Reference"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.352635",
+  "name": "Mass Mailing",
+  "source_name": "Mass Mailing"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.355726",
+  "name": "Customer's Vendor",
+  "source_name": "Customer's Vendor"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.358867",
+  "name": "Campaign",
+  "source_name": "Campaign"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2023-12-11 15:51:30.361696",
+  "name": "Walk In",
+  "source_name": "Walk In"
+ },
+ {
+  "details": null,
+  "docstatus": 0,
+  "doctype": "Lead Source",
+  "modified": "2024-01-07 10:05:05.042128",
+  "name": "Web Site Appointment Form",
+  "source_name": "Web Site Appointment Form"
+ }
+]

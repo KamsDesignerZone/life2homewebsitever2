@@ -49,6 +49,18 @@ def uploadfile():
 
 @frappe.whitelist(allow_guest=True)
 def create_appointment(date, time, tz, contact):
+	contact = json.loads(contact)
+	# Step-1 Create a Lead 
+	appointmentlead = frappe.new_doc("Lead")
+	
+	appointmentlead.lead_name = contact.get("name", None)
+	appointmentlead.mobile_no = contact.get("customer_phone_number", None)
+	appointmentlead.source = 'Web Site Appointment Form'
+	appointmentlead.email_id = contact.get("email", None)
+	appointmentlead.type = 'Channel Partner'
+	appointmentlead.insert(ignore_permissions=True)
+
+	# Step-2 Create an Appointment
 	format_string = "%Y-%m-%d %H:%M:%S"
 	scheduled_time = datetime.datetime.strptime(date + " " + time, format_string)
 	# Strip tzinfo from datetime objects since it's handled by the doctype
@@ -58,7 +70,6 @@ def create_appointment(date, time, tz, contact):
 	# Create a appointment document from form
 	appointment = frappe.new_doc("Appointment")
 	appointment.scheduled_time = scheduled_time
-	contact = json.loads(contact)
 	appointment.customer_name = contact.get("name", None)
 	appointment.customer_phone_number = contact.get("customer_phone_number", None)
 	appointment.customer_email = contact.get("email", None)
