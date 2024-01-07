@@ -19,7 +19,7 @@ class Life2HomeAppointment(Appointment):
 
         def send_confirmation_email(self):
             verify_url = self._get_verify_url()
-            template = "confirm_appointment"
+            template = "life2home_confirm_appointment"
             args = {
                 "link": verify_url,
                 "site_url": frappe.utils.get_url(),
@@ -38,3 +38,4 @@ class Life2HomeAppointment(Appointment):
                 frappe.msgprint(
                     _("Appointment was created. But no lead was found. Please check the email to confirm")
                 )
+        
