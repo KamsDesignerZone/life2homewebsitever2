@@ -130,6 +130,17 @@ override_doctype_class = {
 # Scheduled Tasks
 # ---------------
 
+scheduler_events = {
+	"cron": {
+		"0 7 * * *": [
+			"life2homewebsitever2.www.appointment.appointmentjobs.send_reminder_email_for_today"
+		],
+		"0 7,17 * * *": [
+			"life2homewebsitever2.www.appointment.appointmentjobs.send_reminder_email_for_tommorrow"
+		]
+	}
+}
+
 # scheduler_events = {
 #	"all": [
 #		"life2homewebsitever2.tasks.all"

@@ -19,18 +19,20 @@ class Life2HomeAppointment(Appointment):
 
         def send_confirmation_email(self):
             verify_url = self._get_verify_url()
-            template = "life2home_confirm_appointment"
+            template = "life2home_appointment_confirm"
             args = {
                 "link": verify_url,
                 "site_url": frappe.utils.get_url(),
                 "full_name": self.customer_name,
-                "scheduled_time": datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S").strftime("%d %b %Y %I:%M %p"),
+                "scheduled_full": datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S").strftime("%d %b %Y %I:%M %p"),
+                "scheduled_date": datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S").strftime("%d %b %Y"),
+                "scheduled_time": datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S").strftime("%I:%M %p"),
             }
             frappe.sendmail(
                 recipients=[self.customer_email],
                 template=template,
                 args=args,
-                subject=_("Appointment Confirmation From Life2Home"),
+                subject=_("Appointment Confirmation:{0}".format(datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S").strftime("%d %b %Y %I:%M %p"))),
             )
             if frappe.session.user == "Guest":
                 frappe.msgprint(_("Please check your email to confirm the appointment"))
@@ -39,3 +41,10 @@ class Life2HomeAppointment(Appointment):
                     _("Appointment was created. But no lead was found. Please check the email to confirm")
                 )
         
+        
+
+             
+        
+             
+
+             
