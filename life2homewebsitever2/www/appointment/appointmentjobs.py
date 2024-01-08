@@ -47,7 +47,7 @@ def send_reminder_email(
                 recipients=[scheduled_appointment.customer_email],
                 template=template,
                 args=args,
-                subject=_("Appointment Reminder:{0}".format(scheduled_appointment.scheduled_time.strftime("%d %b %Y %I:%M %p"))),
+                subject=_("**Appointment Reminder**:{0}".format(scheduled_appointment.scheduled_time.strftime("%d %b %Y %I:%M %p"))),
             )
         
 
