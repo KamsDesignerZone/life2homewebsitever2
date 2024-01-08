@@ -8,17 +8,17 @@ def send_reminder_email(
     ):
     print ("Receiced Value for forDay : {0}".format(forDay))
     pullrecordsforstartdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day, 0, 0, 0)
-    pullrecordsforendtdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day + 1, 0, 0, 0)
+    pullrecordsforendtdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day , 23, 59, 59)
     scheduled_date_str = "Today"
 
     if (forDay==1):
         pullrecordsforstartdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day + 1, 0, 0, 0)
-        pullrecordsforendtdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day + 2, 0, 0, 0)
+        pullrecordsforendtdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day + 1, 23, 59, 59)
         scheduled_date_str = "Tommorrow"
         
     else:
         pullrecordsforstartdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day, 0, 0, 0)
-        pullrecordsforendtdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day + 1, 0, 0, 0)
+        pullrecordsforendtdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day , 23, 59, 59)
         scheduled_date_str = "Today"
         
 
