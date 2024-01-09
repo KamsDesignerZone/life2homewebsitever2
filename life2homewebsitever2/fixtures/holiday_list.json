@@ -1,0 +1,17 @@
+[
+ {
+  "color": null,
+  "country": "IN",
+  "docstatus": 0,
+  "doctype": "Holiday List",
+  "from_date": "2024-01-01",
+  "holiday_list_name": "CRM Availability",
+  "holidays": [],
+  "modified": "2024-01-09 19:23:56.344240",
+  "name": "CRM Availability",
+  "subdivision": "MH",
+  "to_date": "2030-12-31",
+  "total_holidays": 0,
+  "weekly_off": "Sunday"
+ }
+]

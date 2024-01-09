@@ -258,9 +258,11 @@ fixtures = [
     },
     {
         "dt" :"Appointment Booking Settings"
-    }
-    ,
+    },
     {
         "dt" :"Lead Source"
+    },
+    {
+        "dt" :"Holiday List"
     }
 ]
