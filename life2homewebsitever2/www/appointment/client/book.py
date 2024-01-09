@@ -16,13 +16,16 @@ def get_context(context):
 def create_appointment(date, time, tz, contact):
 	contact = json.loads(contact)
 	# Step-1 Create a Lead 
-	appointmentlead = frappe.new_doc("Lead")
-	appointmentlead.lead_name = contact.get("name", None)
-	appointmentlead.mobile_no = contact.get("customer_phone_number", None)
-	appointmentlead.source = 'Web Site Appointment Form'
-	appointmentlead.email_id = contact.get("email", None)
-	appointmentlead.type = 'Client'
-	appointmentlead.insert(ignore_permissions=True)
+	# Step 1.1 Check If Lead With Same Email Id is Present or Not
+	# frappe.db.count('Lead', {'email_id': 'hemantsavkar@gmail.com'})
+	if frappe.db.count('Lead', {'email_id': contact.get("email", None)},cache=False) == 0:
+		appointmentlead = frappe.new_doc("Lead")
+		appointmentlead.lead_name = contact.get("name", None)
+		appointmentlead.mobile_no = contact.get("customer_phone_number", None)
+		appointmentlead.source = 'Web Site Appointment Form'
+		appointmentlead.email_id = contact.get("email", None)
+		appointmentlead.type = 'Client'
+		appointmentlead.insert(ignore_permissions=True)
 
 	# Step-2 Create an Appointment
 	format_string = "%Y-%m-%d %H:%M:%S"

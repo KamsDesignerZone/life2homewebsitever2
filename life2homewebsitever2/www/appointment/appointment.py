@@ -24,22 +24,22 @@ class Life2HomeAppointment(Appointment):
                 "link": verify_url,
                 "site_url": frappe.utils.get_url(),
                 "full_name": self.customer_name,
-                "scheduled_full": datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S").strftime("%d %b %Y %I:%M %p"),
-                "scheduled_date": datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S").strftime("%d %b %Y"),
-                "scheduled_time": datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S").strftime("%I:%M %p"),
+                "scheduled_full": self.scheduled_time.strftime("%d %b %Y %I:%M %p"),
+                "scheduled_date": self.scheduled_time.strftime("%d %b %Y"),
+                "scheduled_time": self.scheduled_time.strftime("%I:%M %p"),
             }
             frappe.sendmail(
                 recipients=[self.customer_email],
                 template=template,
                 args=args,
-                subject=_("Appointment Confirmation:{0}".format(datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S").strftime("%d %b %Y %I:%M %p"))),
+                subject=_("Appointment Confirmation:{0}".format(self.scheduled_time.strftime("%d %b %Y %I:%M %p"))),
             )
-            if frappe.session.user == "Guest":
-                frappe.msgprint(_("Please check your email to confirm the appointment"))
-            else:
-                frappe.msgprint(
-                    _("Appointment was created. But no lead was found. Please check the email to confirm")
-                )
+            # if frappe.session.user == "Guest":
+            #     frappe.msgprint(_("Please check your email to confirm the appointment"))
+            # else:
+            #     frappe.msgprint(
+            #         _("Appointment was created. But no lead was found. Please check the email to confirm")
+            #     )
         
         
 
