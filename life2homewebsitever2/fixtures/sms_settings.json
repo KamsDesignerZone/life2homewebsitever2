@@ -1,0 +1,70 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "SMS Settings",
+  "message_parameter": "text",
+  "modified": "2024-01-10 20:36:01.766741",
+  "name": "SMS Settings",
+  "parameters": [
+   {
+    "header": 0,
+    "parameter": "APIKey",
+    "parent": "SMS Settings",
+    "parentfield": "parameters",
+    "parenttype": "SMS Settings",
+    "value": "D5xCmyAubEqzejoGWESJfA"
+   },
+   {
+    "header": 0,
+    "parameter": "senderid",
+    "parent": "SMS Settings",
+    "parentfield": "parameters",
+    "parenttype": "SMS Settings",
+    "value": "KAMSDZ"
+   },
+   {
+    "header": 0,
+    "parameter": "channel",
+    "parent": "SMS Settings",
+    "parentfield": "parameters",
+    "parenttype": "SMS Settings",
+    "value": "Trans"
+   },
+   {
+    "header": 0,
+    "parameter": "DCS",
+    "parent": "SMS Settings",
+    "parentfield": "parameters",
+    "parenttype": "SMS Settings",
+    "value": "0"
+   },
+   {
+    "header": 0,
+    "parameter": "flashsms",
+    "parent": "SMS Settings",
+    "parentfield": "parameters",
+    "parenttype": "SMS Settings",
+    "value": "0"
+   },
+   {
+    "header": 0,
+    "parameter": "route",
+    "parent": "SMS Settings",
+    "parentfield": "parameters",
+    "parenttype": "SMS Settings",
+    "value": "6"
+   },
+   {
+    "header": 0,
+    "parameter": "peid",
+    "parent": "SMS Settings",
+    "parentfield": "parameters",
+    "parenttype": "SMS Settings",
+    "value": "1701159358760978069"
+   }
+  ],
+  "receiver_parameter": "number",
+  "sms_gateway_url": "http://winsms.in/api/mt/SendSMS",
+  "use_post": 0
+ }
+]

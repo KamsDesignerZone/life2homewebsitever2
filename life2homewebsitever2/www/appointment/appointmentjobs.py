@@ -2,6 +2,7 @@ import frappe
 from frappe import _
 from datetime import datetime
 from datetime import timedelta
+from frappe.core.doctype.sms_settings.sms_settings import send_sms
 
 def send_reminder_email(
                   forDay=1
@@ -48,6 +49,12 @@ def send_reminder_email(
                 args=args,
                 subject=_("**Appointment Reminder**:{0}".format(scheduled_appointment.scheduled_time.strftime("%d %b %Y %I:%M %p"))),
             )
+        send_sms([scheduled_appointment.customer_phone_number],
+                 "****Reminder***** Hi {0} , Your Appointment With KAMs Designer Zone Is Scheduled For {1} At KAMS Designer Zone Office. --Our Office Address Is-- Arun Park,Shop No. 6,S.No.33/3,Near Aditya Birla Hospital,Dattanagar,Thergaon,Chinchwad, Pune- 411033. --Driving Directions For Office-- https://goo.gl/maps/Ax7Zo4ubWWd45pnL6 Regards, (KAM'S DESIGNER ZONE) For Any Assistance Please Contact 020 71177198 Download Our Mobile App For More Information Android: https://bit.ly/35knTvb iOS: https://apple.co/2WO1Xn7-KAM's Designer Zone".format(
+                      scheduled_appointment.customer_name,
+                      scheduled_date_str)
+                 )
+        
         
 
 #life2homewebsitever2.www.appointment.appointmentjobs.send_reminder_email_for_tommorrow                 

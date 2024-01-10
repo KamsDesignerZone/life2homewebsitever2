@@ -264,5 +264,8 @@ fixtures = [
     },
     {
         "dt" :"Holiday List"
+    },
+    {
+        "dt" :"SMS Settings"
     }
 ]

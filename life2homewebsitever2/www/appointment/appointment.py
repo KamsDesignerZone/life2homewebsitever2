@@ -3,6 +3,8 @@ import frappe
 from frappe import _
 from datetime import datetime
 
+from frappe.core.doctype.sms_settings.sms_settings import send_sms
+
 class Life2HomeAppointment(Appointment):
         def after_insert(self):
             print (" ************ Inside Life2HomeAppointment after_insert ************ ")
@@ -39,6 +41,16 @@ class Life2HomeAppointment(Appointment):
                 args=args,
                 subject=_("Appointment Confirmation:{0}".format(self.scheduled_time.strftime("%d %b %Y %I:%M %p"))),
             )
+
+            send_sms(
+                 [self.customer_phone_number],
+                 "****Confirmation***** Hi {0} , Your Appointment With KAMs Designer Zone Requested For {1} , Is Now Acknowledged And Confirmed.Please Visit Our Office On Scheduled Appointment Time --Our Office Address Is-- Arun Park,Shop No. 6,S.No.33/3,Near Aditya Birla Hospital,Dattanagar,Thergaon,Chinchwad, Pune- 411033. --Driving Directions For Office-- https://goo.gl/maps/Ax7Zo4ubWWd45pnL6 Regards, (KAM'S DESIGNER ZONE) For Any Assistance Please Contact 020 71177198 Download Our Mobile App For More Information Android: https://bit.ly/35knTvb iOS: https://apple.co/2WO1Xn7-KAM's Designer Zone".format(
+                      self.customer_name,
+                      self.scheduled_time.strftime("%d %b %Y %I:%M %p")
+                 ),
+            )
+
+            
             # if frappe.session.user == "Guest":
             #     frappe.msgprint(_("Please check your email to confirm the appointment"))
             # else:

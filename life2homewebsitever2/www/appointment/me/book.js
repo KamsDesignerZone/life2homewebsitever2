@@ -213,7 +213,7 @@ async function submit() {
             }
             setTimeout(()=>{
                 let redirect_url = "/appointment/me/book_confirmation?doc_name="+response.message.name;
-                window.location.href = redirect_url;},100)
+                window.location.href = redirect_url;},3)
         },
         error: (err)=>{
             frappe.show_alert("Something went wrong please try again");
