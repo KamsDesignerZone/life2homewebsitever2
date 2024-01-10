@@ -5,7 +5,7 @@ from datetime import datetime
 
 class Life2HomeAppointment(Appointment):
         def after_insert(self):
-            print (" ************ Now Inside Life2HomeAppointment ************ ")
+            print (" ************ Inside Life2HomeAppointment after_insert ************ ")
             if self.party:
                 # Create Calendar event
                 self.auto_assign()

@@ -21,9 +21,8 @@ def send_reminder_email(
         pullrecordsforendtdate = datetime(datetime.now().year, datetime.now().month, datetime.now().day , 23, 59, 59)
         scheduled_date_str = "Today"
         
-
     print ("Start Pulling Appointment Between {0} to {1}",pullrecordsforstartdate, pullrecordsforendtdate)
-    print(type(pullrecordsforstartdate))
+    
     all_scheduled_appointments=frappe.db.get_list('Appointment',
                 filters=[[
                     'scheduled_time', 'between', [pullrecordsforstartdate, pullrecordsforendtdate]
