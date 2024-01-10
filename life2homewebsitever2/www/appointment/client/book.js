@@ -42,7 +42,7 @@ function setup_date_picker() {
         changeMonth: true,
         changeYear: true,
         showButtonPanel: true,
-        dateFormat: 'dd MM yy',
+        dateFormat: 'dd-mm-yy',
         minDate: new Date(),
         maxDate: "+45d",
         beforeShowDay: function(date) {
@@ -134,7 +134,6 @@ async function submit() {
     }
     let appointmentData = get_form_data();
     var selected_date = window.selected_date;
-    console.log(new Date(window.selected_time))
     var selected_time = new Date(window.selected_time).getHours() + ':' + new Date(window.selected_time).getMinutes() + ':' + new Date(window.selected_time).getSeconds()
     let appointment =  frappe.call({
         method: 'life2homewebsitever2.www.appointment.client.book.create_appointment',

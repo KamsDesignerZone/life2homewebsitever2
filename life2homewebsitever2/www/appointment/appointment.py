@@ -20,6 +20,11 @@ class Life2HomeAppointment(Appointment):
         def send_confirmation_email(self):
             verify_url = self._get_verify_url()
             template = "life2home_appointment_confirm"
+            print("Current scheduled_time format is {0}".format(type(self.scheduled_time)))
+            if(type(self.scheduled_time) == type(template)):
+                 self.scheduled_time = datetime.strptime(self.scheduled_time, "%Y-%m-%d %H:%M:%S")
+                 print("Current scheduled_time format after upade {0}".format(type(self.scheduled_time)))
+            
             args = {
                 "link": verify_url,
                 "site_url": frappe.utils.get_url(),

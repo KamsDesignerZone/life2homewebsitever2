@@ -46,9 +46,9 @@
 		window.socketio_port = 9003;
 		window.show_language_picker = false;
 	</script>
-    	<script type="text/javascript" src="/assets/frappe/dist/js/frappe-web.bundle.HL3LQV7I.js"></script>
-        <!-- <script type="text/javascript" src="/website_script.js"></script>
-        <script type="text/javascript" src="/assets/erpnext/dist/js/erpnext-web.bundle.22EWE5JY.js"></script> -->
+    
+    {{ include_script('frappe-web.bundle.js') }}
+
     {% block script %}
 
     {% endblock%}
