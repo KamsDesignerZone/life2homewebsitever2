@@ -42,7 +42,7 @@ function setup_date_picker() {
         changeMonth: true,
         changeYear: true,
         showButtonPanel: true,
-        dateFormat: 'dd-mm-yy',
+        dateFormat: 'dd MM yy',
         minDate: new Date(),
         maxDate: "+45d",
         beforeShowDay: function(date) {
