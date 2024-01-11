@@ -25,6 +25,7 @@ def create_appointment(date, time, tz, contact):
 		appointmentlead.source = 'Web Site Appointment Form'
 		appointmentlead.email_id = contact.get("email", None)
 		appointmentlead.type = 'Client'
+		appointmentlead.possession_received = 'No'
 		appointmentlead.insert(ignore_permissions=True)
 
 	# Step-2 Create an Appointment
