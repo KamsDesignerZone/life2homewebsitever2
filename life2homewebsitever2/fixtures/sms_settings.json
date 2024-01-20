@@ -3,7 +3,7 @@
   "docstatus": 0,
   "doctype": "SMS Settings",
   "message_parameter": "text",
-  "modified": "2024-01-10 20:36:01.766741",
+  "modified": "2024-01-20 19:23:19.529367",
   "name": "SMS Settings",
   "parameters": [
    {
@@ -20,7 +20,7 @@
     "parent": "SMS Settings",
     "parentfield": "parameters",
     "parenttype": "SMS Settings",
-    "value": "KAMSDZ"
+    "value": "L2HOME"
    },
    {
     "header": 0,
