@@ -267,5 +267,9 @@ fixtures = [
     },
     {
         "dt" :"SMS Settings"
+    },
+    {
+         "dt": "Custom DocPerm", 
+         "filters":[["Role", "in", ['Guest']]]
     }
 ]
