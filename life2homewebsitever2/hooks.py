@@ -227,6 +227,7 @@ scheduler_events = {
 # auth_hooks = [
 #	"life2homewebsitever2.auth.validate"
 # ]
+website_catch_all = "life2home_404"
 fixtures = [
     {
         "dt" :"Service"
