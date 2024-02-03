@@ -228,6 +228,10 @@ scheduler_events = {
 #	"life2homewebsitever2.auth.validate"
 # ]
 website_catch_all = "life2home_404"
+# python module path
+before_install = "life2homewebsitever2.setup.install.before_install"
+after_install = "life2homewebsitever2.setup.install.after_install"
+after_sync = "life2homewebsitever2.setup.install.after_sync"
 dataloads = [
     {
         "dt" :"Service",
