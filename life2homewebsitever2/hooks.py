@@ -228,6 +228,24 @@ scheduler_events = {
 #	"life2homewebsitever2.auth.validate"
 # ]
 website_catch_all = "life2home_404"
+dataloads = [
+    {
+        "dt" :"Service",
+        "column_to_check" :"name"
+    },
+    {
+         "dt": "Custom Field",
+         "column_to_check" :"name",
+         "files": [
+           {
+               "file": "dataloads/custom_field/initial_records.json",
+               "action": "insert",
+               "sequence" : "0"
+           }  
+         ]
+    }
+]
+
 fixtures = [
     {
         "dt" :"Service"
