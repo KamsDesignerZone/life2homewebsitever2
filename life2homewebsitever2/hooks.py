@@ -234,62 +234,224 @@ after_install = "life2homewebsitever2.setup.install.after_install"
 after_sync = "life2homewebsitever2.setup.install.after_sync"
 dataloads = [
     {
-        "dt" :"Service",
-        "column_to_check" :"name"
+        "dt" :"Contact Information",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/contact_information/up/contact_information.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                        {
+                            "file": "dataloads/contact_information/contact_information_path.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "down" : {
+            "files": [
+                        {
+                            "file": "dataloads/contact_information/contact_information_remove.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
     },
     {
-         "dt": "Custom Field",
-         "column_to_check" :"name",
-         "files": [
-           {
-               "file": "dataloads/custom_field/initial_records.json",
-               "action": "insert",
-               "sequence" : "0"
-           }  
-         ]
+        "dt" :"FAQ",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/faq/up/faq.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                    ]
+        },
+        "down" : {
+            "files": [
+                    ]
+        },
+    },
+    {
+        "dt" :"Holiday List",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/holiday_list/up/holiday_list.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                    ]
+        },
+        "down" : {
+            "files": [
+                    ]
+        },
+    },
+    {
+        "dt" :"Lead Source",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/lead_source/up/lead_source.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                    ]
+        },
+        "down" : {
+            "files": [
+                    ]
+        },
+    },
+    {
+        "dt" :"Project Completion Priority",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/project_completion_priority/up/project_completion_priority.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                    ]
+        },
+        "down" : {
+            "files": [
+                    ]
+        }
+    },
+    {
+        "dt" :"Registration Message Configuration",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/registration_message_configuration/up/registration_message_configuration.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                    ]
+        },
+        "down" : {
+            "files": [
+                    ]
+        }
+    },
+    {
+        "dt" :"Service",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/service/up/service.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                    ]
+        },
+        "down" : {
+            "files": [
+                    ]
+        }
+    },
+    {
+        "dt" :"Site Configuration",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/site_configuration/up/site_configuration.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                    ]
+        },
+        "down" : {
+            "files": [
+                    ]
+        }
+    },
+    {
+        "dt" :"Site Type",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/site_type/up/site_type.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                    ]
+        },
+        "down" : {
+            "files": [
+                    ]
+        }
+    },
+    {
+        "dt" :"SMS Settings",
+        "up" : {
+            "files": [
+                        {
+                            "file": "dataloads/sms_settings/up/sms_settings.json",
+                            "sequence" : "0",
+                            "column_to_check" :"name"
+                        }  
+                    ]
+        },
+        "patch" : {
+            "files": [
+                    ]
+        },
+        "down" : {
+            "files": [
+                    ]
+        }
     }
 ]
 
 fixtures = [
-    {
-        "dt" :"Service"
-    },
-    {
-        "dt" :"FAQ"
-    },
-    {
-        "dt" :"Contact Information"
-    },
-    {
-        "dt" :"Customer Review"
-    },
-    {
-        "dt" :"Registration Message Configuration"
-    },
-    {
-        "dt" :"Site Type"
-    },
-    {
-        "dt" :"Site Configuration"
-    },
-    {
-        "dt" :"Project Completion Priority"
-    },
     {
          "dt": "Custom Field", 
          "filters":[["module", "in", ['Life2Home Website Version 2']]]
     },
     {
         "dt" :"Appointment Booking Settings"
-    },
-    {
-        "dt" :"Lead Source"
-    },
-    {
-        "dt" :"Holiday List"
-    },
-    {
-        "dt" :"SMS Settings"
     },
     {
          "dt": "Custom DocPerm", 
