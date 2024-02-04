@@ -1,0 +1,84 @@
+{% extends 'templates/archi_base.html' %}
+
+{% block script %}
+	<script src="life2home_get_quotes.js"></script>
+{% endblock %}
+
+{% block content %}
+<!-- subheader -->
+<section id="subheader" data-speed="8" data-type="background">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Get A Quote</h1>
+				<ul class="crumb">
+					<li><a href="/">Home</a></li>
+					<li class="sep">/</li>
+					<li>Get A Quote</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- subheader close -->
+
+<div class="container" style="padding-top: 50px !important;" >
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<form name="clientAppointmentForm" id='contact_form'>
+				<div id="step-1" class="row">
+					<h4>Communication Details</h4>
+					<div class="col-md-6">
+						<div id='name_error' class='error'>Your Name Is Required.</div>
+						<div>
+							<input type='text' name='name' id='name' class="form-control" placeholder="Your Name" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div id='customer_phone_number_error' class='error'>Your Phone Is Required.</div>
+						<div>
+							<input type='tel' pattern="[0-9]{10}" name='customer_phone_number' id='customer_phone_number' class="form-control" placeholder="Your Phone" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div id='email_error' class='error'>Your valid E-mail ID.</div>
+						<div>
+							<input type='email' name='email' id='email' class="form-control" placeholder="Your Email" required>
+						</div>
+					</div>
+				</div>
+				<div id="step-3" class="row" style="margin-top: 20px;">
+					<h4>Site Details</h4>
+					<div class="col-md-6 mb10">
+						<div id='site_type_error' class='error'>Select Site Type</div>
+						  <select name="site_type" id="site_type" value="" class="form-control" placeholder="Select Site Type" required>
+							{% for sitetype in site_types %}
+								<option value="{{sitetype.site_type_name}}">{{sitetype.site_type_name}}</option>
+							{% endfor %}
+						  </select>
+					</div>
+					<div class="col-md-6 mb10">
+						<div id='site_configuration_error' class='error'>Select Site Configuration</div>
+						<div>
+							<select name="site_configuration" id="site_configuration" value="" class="form-control" placeholder="Select Site Configuration" required>
+									{% for sitecobfiguration in site_cobfigurations %}
+										<option value="{{sitecobfiguration.site_configuration_name}}">{{sitecobfiguration.site_configuration_name}}</option>
+									{% endfor %}
+							</select>
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<div id="step-4" class="row">
+				<div class="col-md-6 col-sm-12">
+					<p id='submit_btn' class="mt20">
+						<button class="btn btn-line black btn-big form-control" style="padding: 20px;background-color: var(--primary-color-1)" onclick="submit()" id="book_appointment">Get A Quote</button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
