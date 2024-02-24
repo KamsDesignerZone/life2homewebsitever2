@@ -76,6 +76,7 @@ def create_appointment(date, time, tz, contact):
 	appointment.customer_name = contact.get("name", None)
 	appointment.customer_phone_number = contact.get("customer_phone_number", None)
 	appointment.customer_email = contact.get("email", None)
+	appointment.customer_details = contact.get("customer_details", None)
 
 	appointment.custom_booked_by = "Marketing Executive"
 

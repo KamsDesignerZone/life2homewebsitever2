@@ -146,7 +146,7 @@ async function startFileUpload() {
         callback: (response)=>{
             console.log(response);
             setTimeout(()=>{
-                let redirect_url = "/appointment/me/book_confirmation?doc_name="+qs["doc_name"];
+                let redirect_url = "/appointment/me/book_confirmation_catalogue_upload?doc_name="+qs["doc_name"];
                 window.location.href = redirect_url;},100)
         },
         error: (err)=>{
@@ -155,6 +155,13 @@ async function startFileUpload() {
         }
     });
 }
+
+async function finishFileUpload() {
+    setTimeout(()=>{
+        let redirect_url = "/appointment/me/book_confirmation";
+        window.location.href = redirect_url;},100)
+}
+
 
 function setup_search_params() {
 
@@ -212,7 +219,7 @@ async function submit() {
                 frappe.show_alert("Appointment Created Successfully");
             }
             setTimeout(()=>{
-                let redirect_url = "/appointment/me/book_confirmation?doc_name="+response.message.name;
+                let redirect_url = "/appointment/me/book_confirmation_catalogue_upload?doc_name="+response.message.name;
                 window.location.href = redirect_url;},3)
         },
         error: (err)=>{
@@ -224,7 +231,7 @@ async function submit() {
 
 function get_form_data() {
     contact = {};
-    let inputs = ['name', 'customer_phone_number', 'email', 'appointment_date', 'appointment_slot'];
+    let inputs = ['name', 'customer_phone_number', 'email', 'appointment_date', 'appointment_slot','customer_details'];
     inputs.forEach((id) => console.log(document.getElementById(`${id}`).value))
     inputs.forEach((id) => contact[id] = document.getElementById(`${id}`).value)
     return contact

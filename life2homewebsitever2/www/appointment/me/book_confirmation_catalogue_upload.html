@@ -25,12 +25,19 @@
 	<div class="row">
 		<div class="col-md-12">
 			<br/>
-			<h2>Thank You !!</h2>
+			<h2>Catalogue Upload</h2>
 			<h3 style="font-weight: normal;">
-				Your Meeting Request Is Created.We Will Confirm The Same In Next 24 Business Working Hours. You Will Be Notified By SMS & Email upon Appointment Confirmation.
+				Request You To Upload The Catalogue In Case You Want To Send Us Before Our Meeting
+				<p><small style="font-size: small;">You Can upload one file at a time..Same page will load after upload.</small></p>
 			</h3>
-			<br/><br/>
-		</div>
+				<p><input id="catalogue" type="file" class="findDocumentOnboarding"></p>
+				<input type="button" id="btnCatalogueUpload" value="Upload Catalogue" class="btn btn-xs btn-primary uploadDocumentOnboarding" onclick="startFileUpload()">
+		</div>	
+		<div class="col-md-4">
+				<br/><br/>
+				<button class="btn btn-line black btn-big form-control" style="padding: 20px;background-color: var(--primary-color-1)" onclick="finishFileUpload()">Catalogue Upload Completed</button>
+				<br/><br/>
+		</div>		
 	</div>
 </div>
 

@@ -2574,12 +2574,13 @@ left: 0;
 	#contact_form ::placeholder,
 	.text-light #contact_form ::placeholder{
 	  color: #eee;
-	  opacity: 1;
+	  opacity: 2;
 	}
 	
 	.de_light #contact_form ::placeholder{
-	  color: #111111;
-	  opacity: 1;
+	  color: grey;
+	  font-size: small;
+	  opacity: 2;
 	}
 	
 
